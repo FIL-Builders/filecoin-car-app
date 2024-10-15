@@ -1,0 +1,29 @@
+{
+  "name": "filecoin-car-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ipld/car": "^5.3.2",
+    "buffer": "^6.0.3",
+    "ipfs-car": "^1.2.0",
+    "multiformats": "^13.3.0",
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "babel-loader": "^9.2.1",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
