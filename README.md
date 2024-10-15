@@ -1,108 +1,125 @@
-## **File to CAR Converter Web App 📦**
+# File to CAR Converter Web App 📦
 
-This web app allows users to select a file from their local device, convert it into a **CAR (Content Addressable Archive)** file compatible with **Filecoin**, and download the resulting CAR file directly from the browser.
+This web app allows you to select a file from your local device, convert it into a **CAR (Content Addressable Archive)** file compatible with **Filecoin**, and download the resulting CAR file directly from the browser.
 
-### **Features**
-- Select any file and convert it to a CAR archive.
-- Download the CAR file instantly from the browser.
-- Clean and responsive design.
-
----
-
-## **Getting Started**
-
-### **Prerequisites**
-Make sure you have **Node.js** and **npm** installed on your machine.
+## Features
+- Upload any file and convert it to CAR format.
+- Download the CAR file instantly.
+- Optimized for production with Webpack.
+- Lightweight and works with any simple HTTP server.
 
 ---
 
-### **Installation**
-1. Clone the repository:
+## Getting Started
 
+### Prerequisites
+- **Node.js** and **npm** installed on your machine.
+- Install `http-server` globally or as a dev dependency:
+
+  ```bash
+  npm install -g http-server
+  ```
+
+---
+
+## Installation
+
+1. **Clone the repository:**
    ```bash
-   git clone <your-repository-url>
+   git clone <your-repo-url>
    cd filecoin-car-app
    ```
 
-2. Install dependencies:
-
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. Start the development server:
+---
 
+## Development
+
+1. **Run the development server:**
    ```bash
    npm start
    ```
 
-4. Open the app in your browser at:  
-   **http://localhost:8080**
+2. Open your browser at **`http://localhost:8080`**.
 
 ---
 
-### **Usage**
-1. Click **"Choose File"** to select a file from your computer.
-2. Press the **"Convert to CAR"** button to convert the selected file.
-3. Click the **"Download CAR File"** link to download the CAR file.
+## Production Build
+
+1. **Create the production build:**
+   ```bash
+   npm run build
+   ```
+
+2. **Serve the build with `http-server`:**
+   ```bash
+   npm run serve
+   ```
+
+3. Visit **`http://localhost:8080`** to see the running app.
 
 ---
 
-## **Project Structure**
+## Project Structure
+
 ```
 filecoin-car-app/
 │
-├── dist/
-│   ├── index.html        # Main HTML file for the app
-│   └── bundle.js         # Webpack-generated JS bundle
-│
+├── public/
+│   └── index.html         # HTML template for Webpack
 ├── src/
-│   └── index.js          # Main JavaScript logic for CAR conversion
-│
-├── webpack.config.js     # Webpack configuration
-├── package.json          # Project dependencies and scripts
-└── README.md             # Project documentation (this file)
+│   └── index.js           # JavaScript logic
+├── dist/                  # Generated build files (gitignored)
+├── webpack.config.js      # Webpack configuration
+├── package.json           # Project metadata and dependencies
+├── .gitignore             # Files and folders to ignore in Git
+└── README.md              # Documentation (this file)
 ```
 
 ---
 
-## **Technologies Used**
-- **JavaScript (ES6+)**
-- **IPFS CAR library** for CAR file generation
-- **Webpack** for module bundling
-- **HTML & CSS** for UI
+## Troubleshooting
 
----
-
-## **Troubleshooting**
-- If the app doesn’t start, ensure all dependencies are installed correctly:
-  ```bash
-  npm install
-  ```
-
-- If you encounter module resolution issues, try cleaning the cache and reinstalling:
+- If the app doesn’t run, try clearing the cache and reinstalling dependencies:
   ```bash
   rm -rf node_modules package-lock.json
   npm cache clean --force
   npm install
   ```
 
----
-
-## **Contributing**
-Feel free to fork this repository and submit pull requests to improve the app.
-
----
-
-## **License**
-This project is licensed under the MIT License.
+- If `http-server` isn’t found, install it globally:
+  ```bash
+  npm install -g http-server
+  ```
 
 ---
 
-## **Acknowledgments**
+## Technologies Used
+- **JavaScript (ES6+)**
+- **Webpack** for bundling.
+- **HTMLWebpackPlugin** for injecting JS into HTML.
+- **IPLD CAR** library for CAR file creation.
+- **Multiformats** for CID generation.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Contributing
+
+Feel free to submit pull requests or open issues to suggest improvements.
+
+---
+
+## Acknowledgments
+
 - Inspired by Filecoin and IPFS technologies.
-- Thanks to the **multiformats** and **@ipld/car** libraries for providing CAR file support.
-
----
-
-This simple README should guide users through installation, usage, and troubleshooting. Let me know if you need any more sections!
+- Special thanks to the **@ipld/car** and **multiformats** teams.
